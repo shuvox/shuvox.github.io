@@ -7,7 +7,7 @@
   let name = "ShadmanShuvo";
   let title = "BUET CSE Undergrad";
   let currentRole = "L1-T2 Student";
-  let subtitle = "Learning algorithms";
+  let subtitle = "";
 
   let isVisible = false;
   let aboutVisible = false;
