@@ -4,17 +4,38 @@
 
     import ProjectCard from "./ProjectCard.svelte";
     import { projects } from "$lib/data/projects";
-
-    let prevUrl = "/"; //"/achievements";
+    let isVisible = true;
+    let prevUrl = "/achievements"; //"/";
     let nextUrl = "/skills";
 </script>
 
 <div class="container mx-auto p-4">
-    <h1
-        class="text-3xl font-bold text-primary_dark dark:text-primary_light my-8"
-    >
-        Projects
-    </h1>
+    <div
+      class="absolute top-0 left-0 w-72 h-72 bg-secondary_light/10 dark:bg-secondary_dark/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+    ></div>
+    <div
+      class="absolute bottom-0 right-0 w-96 h-96 bg-secondary_light/5 dark:bg-secondary_dark/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+    ></div>
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      <div
+        class="transform transition-all duration-1000 ease-out {isVisible
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-10 opacity-0'}"
+      >
+      <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary_dark via-secondary_light to-primary_dark dark:from-primary_light dark:via-secondary_dark dark:to-primary_light bg-clip-text text-transparent animate-fade-in-up"
+      >
+          Projects
+      </h1>
+      <p
+          class="text-xl md:text-2xl text-ink_light/80 dark:text-ink_dark/80 mb-8 animate-fade-in-up animate-delay-200"
+        >
+          A showcase of innovation, creativity, and technical expertise
+        </p>
+      </div>
+    </div>
+
+        
 
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">

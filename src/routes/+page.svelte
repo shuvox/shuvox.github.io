@@ -4,7 +4,7 @@
   import dp from "$lib/images/black.png";
   import persistent_store from "$lib/stores/persistentstore";
 
-  let name = "ShadmanShuvo";
+  let name = "Shadman Shuvo";
   let title = "BUET CSE Undergrad";
   let currentRole = "L1-T2 Student";
   let subtitle = "";
@@ -35,7 +35,7 @@
   });
 
   let prevUrl = "/education"; //"/research";
-  let nextUrl = "/projects"; //"/achievements";
+  let nextUrl = "/achievements"; //"/projects";
 </script>
 
 <div class="min-h-[80vh] flex flex-col overflow-hidden">

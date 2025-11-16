@@ -2,7 +2,18 @@ import flappy_poster from "$lib/images/flappy-bird.png";
 import buet_cse_courseworks_poster from "$lib/images/buet_cse_courseworks2.jpg";
 import algomania_poster from "$lib/images/algo-mania.png";
 import mathcamp_poster from "$lib/images/math-camp.png";
+import repair_guru_poster from "$lib/images/repair-guru2.png";
 export const projects = [
+  {
+    title: "Repair Guru", //Data Structures & Algorithms Visualizer",
+    imageUrl: repair_guru_poster,
+    githubUrl: "https://github.com/ShadmanSShuvo/Repair-Guru",
+    youtubeUrl: "https://youtu.be/NR-uJ1V-9vg",
+    tags: ["TypeScript", "Gemini-API", "AI", "Solvio AI Hackathon"],
+    year: "2025",
+    description:
+      "This repository contains the links to the Repair Guru project for Solvio AI Hackathon. It is a team project with Sanim Muntasir Mithun, Afia Jahin Adhitee & Ahnaf Akif, developed using TypeScript and Gemini-API to provide repair solutions using AI.",
+  },
   {
     title: "AlgoMania - DSA Visualizer", //Data Structures & Algorithms Visualizer",
     imageUrl: algomania_poster,
