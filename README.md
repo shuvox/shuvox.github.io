@@ -1,6 +1,6 @@
 # Portfolio Website
 
-- [**Live Explore**](https://shadmansshuvo.github.io/portfolio) my portfolio website.
+- [**Live Explore**](https://shuvox.github.io/) my portfolio website.
 
 You like it right? :smirk:
 </br>
