@@ -6,7 +6,7 @@
 
   let name = "Shadman Shuvo";
   let title = "BUET CSE Undergrad";
-  let currentRole = "L1-T2 Student";
+  let currentRole = "L2-T2 Student";
   let subtitle = "";
 
   let isVisible = false;
@@ -162,7 +162,7 @@
                 class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
               />
             </a>
-            <a
+            <!-- <a
               href="https://facebook.com/ShadmanSShuvo"
               target="_blank"
               aria-label="Facebook"
@@ -173,7 +173,7 @@
                 alt="Facebook"
                 class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
               />
-            </a>
+            </a> -->
           </div>
         </div>
 
@@ -280,7 +280,7 @@
             >, or exploring transformative ideas through
             <span
               class="font-medium text-secondary_light dark:text-secondary_dark"
-              >public speaking.</span
+              >sharing my projects demo on Youtube.</span
             >
           </p>
         </div>
@@ -292,7 +292,7 @@
             : 'translate-x-10 opacity-0'}"
         >
           <!-- Books Section -->
-          <div
+          <!-- <div
             class="bg-gradient-to-r from-secondary_light/5 to-transparent dark:from-secondary_dark/5 p-4 rounded-lg border-l-2 border-secondary_light dark:border-secondary_dark"
           >
             <h4
@@ -309,7 +309,7 @@
               <span class="italic">Pather Pachali</span> and
               <span class="italic">Aronnoyok</span>
             </p>
-          </div>
+          </div> -->
 
           <!-- Philosophy -->
           <div class="text-center">
@@ -319,9 +319,7 @@
               "Always be happy"
             </blockquote>
             <p class="text-sm text-ink_light/70 dark:text-ink_dark/70">
-              I believe life is a precious gift meant to be fully experienced
-              and shared. Always open to meaningful conversations about
-              technology, cinema, sports, or life's beautiful complexities.
+              I believe life is a precious gift meant to be lived with purpose, integrity, and a constant desire to learn. While I am passionate about technology and innovation, I also appreciate the human experiences that give life depth and meaning. I enjoy meaningful conversations about technology, sports, personal growth, and the complexities of life. Building genuine connections through shared ideas and mutual respect is something I deeply value.
             </p>
           </div>
         </div>

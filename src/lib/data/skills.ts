@@ -7,11 +7,11 @@ export const skills = [
       "https://img.shields.io/badge/Python-python-yellow?style=flat&logo=python&logoColor=white",
       "https://img.shields.io/badge/Java-openjdk-red?style=flat&logo=openjdk&logoColor=white",
 
-      //"https://img.shields.io/badge/JavaScript-javascript-yellow?style=flat&logo=javascript&logoColor=black",
+      "https://img.shields.io/badge/JavaScript-javascript-yellow?style=flat&logo=javascript&logoColor=black",
       // "https://img.shields.io/badge/Bash-gnubash-green?style=flat&logo=gnubash&logoColor=white",
-      // "https://img.shields.io/badge/TypeScript-typescript-blue?style=flat&logo=typescript&logoColor=white",
-      //"https://img.shields.io/badge/SQL-sql-blue?style=flat&logo=sql&logoColor=white",
-      // "https://img.shields.io/badge/JSON-json-lightgrey?style=flat&logo=json&logoColor=white",
+      "https://img.shields.io/badge/TypeScript-typescript-blue?style=flat&logo=typescript&logoColor=white",
+      "https://img.shields.io/badge/SQL-sql-blue?style=flat&logo=sql&logoColor=white",
+      "https://img.shields.io/badge/JSON-json-lightgrey?style=flat&logo=json&logoColor=white",
     ],
   },
   {
@@ -29,14 +29,16 @@ export const skills = [
     title: "Web Development",
     badges: [
       "https://img.shields.io/badge/CSS3-css3-blue?style=flat&logo=css3&logoColor=white",
-
+      "https://img.shields.io/badge/JavaScript-javascript-yellow?style=flat&logo=javascript&logoColor=black",
+      "https://img.shields.io/badge/TypeScript-typescript-blue?style=flat&logo=typescript&logoColor=white",
       "https://img.shields.io/badge/React-react-blue?style=flat&logo=react&logoColor=white",
-      // "https://img.shields.io/badge/Svelte-svelte-orange?style=flat&logo=svelte&logoColor=white",
+      "https://img.shields.io/badge/Next.js-nextdotjs-black?style=flat&logo=nextdotjs&logoColor=white",
+      "https://img.shields.io/badge/Svelte-svelte-orange?style=flat&logo=svelte&logoColor=white",
 
       // "https://img.shields.io/badge/Django-django-green?style=flat&logo=django&logoColor=white",
 
-      // "https://img.shields.io/badge/Node.js-nodedotjs-green?style=flat&logo=nodedotjs&logoColor=white",
-      // "https://img.shields.io/badge/PostgreSQL-postgresql-blue?style=flat&logo=postgresql&logoColor=white",
+      "https://img.shields.io/badge/Node.js-nodedotjs-green?style=flat&logo=nodedotjs&logoColor=white",
+      "https://img.shields.io/badge/PostgreSQL-postgresql-blue?style=flat&logo=postgresql&logoColor=white",
     ],
   },
   {
@@ -47,13 +49,13 @@ export const skills = [
       "https://img.shields.io/badge/Markdown-markdown-black?style=flat&logo=markdown&logoColor=white",
     ],
   },
-//   {
-//     title: "DevOps",
-//     badges: [
-//       "https://img.shields.io/badge/Git-git-orange?style=flat&logo=git&logoColor=white",
-//       //"https://img.shields.io/badge/Docker-docker-blue?style=flat&logo=docker&logoColor=white",
-//       "https://img.shields.io/badge/GitHub%20Actions-githubactions-black?style=flat&logo=githubactions&logoColor=white",
-//       //"https://img.shields.io/badge/DigitalOcean-digitalocean-blue?style=flat&logo=digitalocean&logoColor=white",
-//     ],
-//   },
+  {
+    title: "DevOps",
+    badges: [
+      "https://img.shields.io/badge/Git-git-orange?style=flat&logo=git&logoColor=white",
+      //"https://img.shields.io/badge/Docker-docker-blue?style=flat&logo=docker&logoColor=white",
+      "https://img.shields.io/badge/GitHub%20Actions-githubactions-black?style=flat&logo=githubactions&logoColor=white",
+      //"https://img.shields.io/badge/DigitalOcean-digitalocean-blue?style=flat&logo=digitalocean&logoColor=white",
+    ],
+  },
 ];
