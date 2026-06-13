@@ -10,11 +10,11 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary_dark: '#0d1b2a',
-        secondary_dark: '#06d6a0',
+        primary_dark: '#181818',
+        secondary_dark: '#38bdf8',
         ink_dark: '#fff',
         primary_light: '#fff',
-        secondary_light: '#06d6a0',
+        secondary_light: '#0ea5e9',
         ink_light: '#000',
       },
 

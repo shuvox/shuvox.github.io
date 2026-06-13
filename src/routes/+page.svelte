@@ -3,10 +3,11 @@
   import { onMount } from "svelte";
   import dp from "$lib/images/black.png";
   import persistent_store from "$lib/stores/persistentstore";
+  import Typewriter from "$lib/components/Typewriter.svelte";
+  import SocialLinks from "$lib/components/SocialLinks.svelte";
 
   let name = "Shadman Shuvo";
   let title = "BUET CSE Undergrad";
-  let currentRole = "L2-T2 Student";
   let subtitle = "";
 
   let isVisible = false;
@@ -25,7 +26,7 @@
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const aboutSection = document.getElementById("about-section");
@@ -34,8 +35,8 @@
     return () => observer.disconnect();
   });
 
-  let prevUrl = "/education"; //"/research";
-  let nextUrl = "/achievements"; //"/projects";
+  let prevUrl = "/education";
+  let nextUrl = "/achievements";
 </script>
 
 <div class="min-h-[80vh] flex flex-col overflow-hidden">
@@ -81,11 +82,9 @@
                 >Currently</span
               >
             </div>
-            <p
-              class="mt-1 text-lg font-semibold text-primary_dark dark:text-primary_light"
-            >
-              {currentRole}
-            </p>
+            <div class="mt-1 font-semibold text-lg">
+              <Typewriter words={["Full-Stack Developer", "Machine Learning Enthusiast", "BUET CSE Undergrad"]} />
+            </div>
           </div>
 
           <!-- Contact Info -->
@@ -105,7 +104,6 @@
                   />
                 </svg>
                 <span><a href="mailto:sdmnsvo@gmail.com">sdmnsvo@gmail.com</a></span>
-                <!-- <span><a href="mailto:ShadmanSShuvo@gmail.com">ShadmanSShuvo@gmail.com</a></span> -->
               </div>
               <div
                 class="flex items-center space-x-2 hover:text-secondary_light dark:hover:text-secondary_dark transition-colors duration-300"
@@ -123,57 +121,8 @@
           </div>
 
           <!-- Social Links -->
-          <div
-            class="flex justify-center lg:justify-start space-x-4 animate-fade-in-up animate-delay-1000"
-          >
-            <a
-              href="https://www.linkedin.com/in/ShadmanSShuvo"
-              target="_blank"
-              aria-label="LinkedIn"
-              class="group transform hover:scale-110 transition-all duration-300 hover:rotate-3"
-            >
-              <img
-                src="https://img.shields.io/badge/LinkedIn-06d6a0?style=flat&logo=linkedin&logoColor=white"
-                alt="LinkedIn"
-                class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
-              />
-            </a>
-            <a
-              href="https://github.com/ShadmanSShuvo"
-              target="_blank"
-              aria-label="GitHub"
-              class="group transform hover:scale-110 transition-all duration-300 hover:-rotate-3"
-            >
-              <img
-                src="https://img.shields.io/badge/Github-06d6a0?style=flat&logo=github&logoColor=white"
-                alt="GitHub"
-                class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
-              />
-            </a>
-            <a
-              href="https://www.youtube.com/@Shadman_Shuvo"
-              target="_blank"
-              aria-label="Youtube"
-              class="group transform hover:scale-110 transition-all duration-300 hover:rotate-3"
-            >
-              <img
-                src="https://img.shields.io/badge/Youtube-06d6a0?style=flat&logo=youtube&logoColor=white"
-                alt="Youtube"
-                class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
-              />
-            </a>
-            <!-- <a
-              href="https://facebook.com/ShadmanSShuvo"
-              target="_blank"
-              aria-label="Facebook"
-              class="group transform hover:scale-110 transition-all duration-300 hover:-rotate-3"
-            >
-              <img
-                src="https://img.shields.io/badge/Facebook-06d6a0?style=flat&logo=facebook&logoColor=white"
-                alt="Facebook"
-                class="h-8 w-auto transition-all duration-300 group-hover:shadow-lg"
-              />
-            </a> -->
+          <div class="pt-2">
+            <SocialLinks />
           </div>
         </div>
 
@@ -209,37 +158,20 @@
       </div>
     </div>
   </section>
- 
-    <!-- CV Download Button -->
-    <!-- href="src/lib/documents/CV_SHUVO_2.pdf" -->
-    <!--
-    <div class="mt-4">
-        <a
-            href="https://drive.google.com/file/d/1bEKnYj8eLsTO9sKft4j-RXU2ukm594ub/view?usp=sharing"
-            target="_blank"
-            class="inline-flex items-center gap-2 px-6 py-2 bg-primary_dark dark:bg-primary_light text-white dark:text-black rounded-lg hover:opacity-90 transition-opacity"
-        >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
-            </svg>
-            Download CV
-        </a>
-    </div>
-    -->
 
-  <!-- Compact About Section -->
+  <!-- Bento Box About Section -->
   <section
     id="about-section"
-    class="py-8 md:py-12 border-t border-gray-200 dark:border-gray-700"
+    class="py-12 md:py-16 border-t border-gray-200 dark:border-gray-700 relative"
   >
     <div class="max-w-6xl mx-auto px-4">
       <div
-        class="text-center mb-6 transform transition-all duration-800 {aboutVisible
+        class="text-center mb-10 transform transition-all duration-800 {aboutVisible
           ? 'translate-y-0 opacity-100'
           : 'translate-y-10 opacity-0'}"
       >
         <h3
-          class="text-2xl md:text-3xl font-bold text-primary_dark dark:text-primary_light mb-4"
+          class="text-3xl md:text-4xl font-bold text-primary_dark dark:text-primary_light mb-4"
         >
           About Me
         </h3>
@@ -248,78 +180,128 @@
         ></div>
       </div>
 
-      <!-- Two Column About Layout -->
-      <div class="grid md:grid-cols-2 gap-8 items-start">
-        <!-- Left Column - Main Description -->
-        <div
-          class="space-y-4 transform transition-all duration-800 delay-200 {aboutVisible
-            ? 'translate-x-0 opacity-100'
-            : '-translate-x-10 opacity-0'}"
-        >
-          <p class="text-ink_light/80 dark:text-ink_dark/80 leading-relaxed">
-            <span
-              class="font-semibold text-secondary_light dark:text-secondary_dark"
-              >CS Undergraduate</span
-            >
-            from
-            <span class="font-medium text-primary_dark dark:text-primary_light"
-              >Bangladesh University of Engineering and Technology</span
-            >
-            (August 2024). When I'm not diving deep into tech innovations, you'll
-            find me rewatching
-            <span class="italic font-medium">Harry Potters</span> and
-            <span class="italic font-medium">Captain America</span>,
-            competing in
-            <span
-              class="font-medium text-secondary_light dark:text-secondary_dark"
-              >basketball</span
-            >, unwinding with
-            <span
-              class="font-medium text-secondary_light dark:text-secondary_dark"
-              >table tennis</span
-            >, or exploring transformative ideas through
-            <span
-              class="font-medium text-secondary_light dark:text-secondary_dark"
-              >sharing my projects demo on Youtube.</span
-            >
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 transform transition-all duration-1000 {aboutVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}">
+        <!-- 1. Academic Journey Card (BUET) - Spans 2 columns, 2 rows -->
+        <div class="md:col-span-2 md:row-span-2 p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between overflow-hidden relative group hover:shadow-xl transition-all duration-300">
+          <!-- Subtle technical background pattern -->
+          <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="40" cy="40" r="2" fill="currentColor"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
+          
+          <div class="relative z-10 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Education</span>
+              <!-- Graduation Cap Icon -->
+              <svg class="w-6 h-6 text-secondary_light dark:text-secondary_dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479L12 21l-4.83-3.943a12.083 12.083 0 01.665-6.479L12 14z" />
+              </svg>
+            </div>
+            
+            <h4 class="text-2xl font-bold text-primary_dark dark:text-primary_light">
+              Bangladesh University of Engineering and Technology
+            </h4>
+            
+            <p class="text-ink_light/80 dark:text-ink_dark/80 leading-relaxed text-sm md:text-base">
+              I am a <span class="font-semibold text-secondary_light dark:text-secondary_dark">Computer Science & Engineering (CSE) Undergraduate</span> at BUET. My academic journey has been centered on building a solid foundation in algorithm design, software engineering, databases, and machine learning.
+            </p>
+            
+            <div class="pt-2 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 text-xs rounded-full bg-secondary_light/10 text-secondary_light dark:bg-secondary_dark/10 dark:text-secondary_dark font-medium">HSC batch 2023</span>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-secondary_light/10 text-secondary_light dark:bg-secondary_dark/10 dark:text-secondary_dark font-medium">Major in CSE</span>
+              <span class="px-2.5 py-1 text-xs rounded-full bg-secondary_light/10 text-secondary_light dark:bg-secondary_dark/10 dark:text-secondary_dark font-medium">Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Philosophy Card - Spans 1 col, 1 row -->
+        <div class="p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+          <div class="space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Philosophy</span>
+            <blockquote class="text-lg font-medium italic text-secondary_light dark:text-secondary_dark animate-pulse-gentle">
+              "Always be happy"
+            </blockquote>
+          </div>
+          <p class="text-xs text-ink_light/70 dark:text-ink_dark/70 leading-relaxed mt-2">
+            I believe life is a precious gift meant to be lived with purpose, integrity, and a constant desire to learn. I value meaningful connections, sports, and technical exploration.
           </p>
         </div>
 
-        <!-- Right Column - Interests & Philosophy -->
-        <div
-          class="space-y-4 transform transition-all duration-800 delay-400 {aboutVisible
-            ? 'translate-x-0 opacity-100'
-            : 'translate-x-10 opacity-0'}"
-        >
-          <!-- Books Section -->
-          <!-- <div
-            class="bg-gradient-to-r from-secondary_light/5 to-transparent dark:from-secondary_dark/5 p-4 rounded-lg border-l-2 border-secondary_light dark:border-secondary_dark"
-          >
-            <h4
-              class="font-semibold text-secondary_light dark:text-secondary_dark mb-2 flex items-center"
-            >
-              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
-                />
-              </svg>
-              Favorite Reads
-            </h4>
-            <p class="text-sm text-ink_light/70 dark:text-ink_dark/70">
-              <span class="italic">Pather Pachali</span> and
-              <span class="italic">Aronnoyok</span>
+        <!-- 3. Brewing Coffee Card - Spans 1 col, 1 row -->
+        <div class="p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Interests</span>
+            <!-- Coffee Cup Icon -->
+            <svg class="w-6 h-6 text-secondary_light dark:text-secondary_dark group-hover:bounce transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 013 3v2a3 3 0 01-3 3h-1V8h1zm-4-2c0-1.5-1-2.5-1-2.5S12 5 12 6M10 6c0-1.5-1-2.5-1-2.5S8 5 8 6M6 6c0-1.5-1-2.5-1-2.5S4 5 4 6" />
+              <rect x="3" y="8" width="11" height="8" rx="2" />
+            </svg>
+          </div>
+          <div>
+            <h5 class="text-base font-bold text-primary_dark dark:text-primary_light mb-1">Brewing Coffee</h5>
+            <p class="text-xs text-ink_light/75 dark:text-ink_dark/75">
+              Crafting the perfect espresso to fuel late-night coding sessions and debugging sprints.
             </p>
-          </div> -->
+          </div>
+        </div>
 
-          <!-- Philosophy -->
-          <div class="text-center">
-            <blockquote
-              class="text-lg font-medium italic text-secondary_light dark:text-secondary_dark mb-2 animate-pulse-gentle"
-            >
-              "Always be happy"
-            </blockquote>
-            <p class="text-sm text-ink_light/70 dark:text-ink_dark/70">
-              I believe life is a precious gift meant to be lived with purpose, integrity, and a constant desire to learn. While I am passionate about technology and innovation, I also appreciate the human experiences that give life depth and meaning. I enjoy meaningful conversations about technology, sports, personal growth, and the complexities of life. Building genuine connections through shared ideas and mutual respect is something I deeply value.
+        <!-- 4. Baking Card - Spans 1 col, 1 row -->
+        <div class="p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Creative</span>
+            <!-- Whisk/Baking Icon -->
+            <svg class="w-6 h-6 text-secondary_light dark:text-secondary_dark group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12M9 6v6M15 6v6M12 15a3 3 0 100 6 3 3 0 000-6zM6 12c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+            </svg>
+          </div>
+          <div>
+            <h5 class="text-base font-bold text-primary_dark dark:text-primary_light mb-1">Baking</h5>
+            <p class="text-xs text-ink_light/75 dark:text-ink_dark/75">
+              The precise science of sourdough, cookies, and pastries—where culinary precision meets design.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Science Fiction Literature Card - Spans 1 col, 1 row -->
+        <div class="p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Reading</span>
+            <!-- Book Icon -->
+            <svg class="w-6 h-6 text-secondary_light dark:text-secondary_dark group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13" />
+            </svg>
+          </div>
+          <div>
+            <h5 class="text-base font-bold text-primary_dark dark:text-primary_light mb-1">Sci-Fi Literature</h5>
+            <p class="text-xs text-ink_light/75 dark:text-ink_dark/75">
+              Exploring alternate realities, cybernetics, and future worlds.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. Sports & Active Life Card - Spans 1 col, 1 row -->
+        <div class="p-6 bg-gradient-to-br from-primary_light to-gray-50 dark:from-primary_dark dark:to-gray-900 border border-gray-200 dark:border-white/10 rounded-2xl flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-secondary_light dark:text-secondary_dark">Sports</span>
+            <!-- Basketball Icon -->
+            <svg class="w-6 h-6 text-secondary_light dark:text-secondary_dark group-hover:rotate-45 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M6.2 6.2c2.4 2.4 2.4 6.4 0 8.8M17.8 6.2c-2.4 2.4-2.4 6.4 0 8.8M2 12h20M12 2v20" />
+            </svg>
+          </div>
+          <div>
+            <h5 class="text-base font-bold text-primary_dark dark:text-primary_light mb-1">Active Life</h5>
+            <p class="text-xs text-ink_light/75 dark:text-ink_dark/75">
+              Unwinding on the basketball court, playing fast-paced table tennis, or enjoying a good superhero movie.
             </p>
           </div>
         </div>
@@ -382,104 +364,3 @@
     </button>
   </div>
 </div>
-
-<style>
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    25% {
-      transform: translateY(-10px) rotate(5deg);
-    }
-    50% {
-      transform: translateY(-15px) rotate(0deg);
-    }
-    75% {
-      transform: translateY(-5px) rotate(-5deg);
-    }
-  }
-
-  @keyframes expand-width {
-    from {
-      width: 0;
-    }
-    to {
-      width: 5rem;
-    }
-  }
-
-  @keyframes pulse-gentle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-slide-in-left {
-    animation: slide-in-left 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-expand-width {
-    animation: expand-width 1s ease-out forwards;
-  }
-
-  .animate-pulse-gentle {
-    animation: pulse-gentle 3s ease-in-out infinite;
-  }
-
-  /* Animation delays */
-  .animate-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animate-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animate-delay-600 {
-    animation-delay: 0.6s;
-  }
-  .animate-delay-800 {
-    animation-delay: 0.8s;
-  }
-  .animate-delay-1000 {
-    animation-delay: 1s;
-  }
-  .animate-delay-2000 {
-    animation-delay: 2s;
-  }
-</style>

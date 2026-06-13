@@ -209,14 +209,14 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #06d6a0, #0d1b2a);
+  background: linear-gradient(135deg, #0ea5e9, #181818);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-dark {
-  background: linear-gradient(135deg, #06d6a0, #ffffff);
+  background: linear-gradient(135deg, #38bdf8, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -242,6 +242,17 @@
 /* Focus States */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-secondary_light focus:ring-offset-2 dark:focus:ring-secondary_dark dark:focus:ring-offset-gray-800;
+}
+
+/* Theme Transitioning */
+.theme-transitioning,
+.theme-transitioning * {
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out, color 300ms ease-in-out, box-shadow 300ms ease-in-out !important;
+}
+
+/* Slow Spin Animation */
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
 }
 
 /* Responsive Animation Adjustments */
