@@ -29,7 +29,7 @@ jobs:
 
       - name: Upload artifact for deployment
         # adjust 'build' below to the folder produced by your build (e.g., build, dist, www)
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: build
 
