@@ -9,7 +9,7 @@ import eduVerse_poster from "$lib/images/eduVerse.png";
 
 export const projects = [
   {
-    title: "eduVerse", //Data Structures & Algorithms Visualizer",
+    title: "eduVerse",
     imageUrl: eduVerse_poster,
     githubUrl: "https://github.com/ShadmanSShuvo/edu-Verse",
     youtubeUrl: "https://www.youtube.com/watch?v=AdwLN4_UKM4",
@@ -25,7 +25,7 @@ export const projects = [
       "eduVerse is a sophisticated, role-based e-learning platform built with Next.js 16, React 19, and PostgreSQL. It features AI-powered automated MCQ exam generation via Google Gemini, adaptive HLS video streaming with Mux, and secure local payment integration through SSLCommerz.",
   },
   {
-    title: "Trinity Learning", //Data Structures & Algorithms Visualizer",
+    title: "Trinity Learning",
     imageUrl: trinity_learning_poster,
     githubUrl: "https://github.com/ShadmanSShuvo/Trinity-Learning",
     youtubeUrl: "https://youtu.be/0Gcdd81dBdU",
@@ -41,7 +41,7 @@ export const projects = [
       "AI-powered supplementary learning platform built for BUET CSE Fest 2026 Hackathon (AI & API segment). Inspired by NotebookLM, this project helps users interact with learning materials through intelligent summaries, Q&A, and contextual insights.",
   },
   {
-    title: "Aegis Shield", //Data Structures & Algorithms Visualizer",
+    title: "Aegis Shield",
     imageUrl: aegis_shield_poster,
     githubUrl: "https://github.com/ShadmanSShuvo/Aegis-Shield",
     youtubeUrl: "https://youtu.be/1h5EfKMbaME",
@@ -51,7 +51,7 @@ export const projects = [
       "An anonymous platform for reporting human rights violations, crimes, and harassment. The app uses AI to analyze reports, identify potential legal violations, suggest actions, and categorize risks, empowering users to seek justice safely.",
   },
   {
-    title: "Repair Guru", //Data Structures & Algorithms Visualizer",
+    title: "Repair Guru",
     imageUrl: repair_guru_poster,
     githubUrl: "https://github.com/ShadmanSShuvo/Repair-Guru",
     youtubeUrl: "https://youtu.be/NR-uJ1V-9vg",
@@ -61,11 +61,11 @@ export const projects = [
       "This repository contains the links to the Repair Guru project for Solvio AI Hackathon. It is a team project with Sanim Muntasir Mithun, Afia Jahin Adhitee & Ahnaf Akif, developed using TypeScript and Gemini-API to provide repair solutions using AI.",
   },
   {
-    title: "AlgoMania - DSA Visualizer", //Data Structures & Algorithms Visualizer",
+    title: "AlgoMania - DSA Visualizer",
     imageUrl: algomania_poster,
     githubUrl: "https://github.com/ShadmanSShuvo/AlgoMania",
     youtubeUrl: "https://youtu.be/R8U2GAA77SI",
-    tags: ["Java", "JavaFX", "CSS", "OOP", "BUET CSE"], // "Courseworks"],
+    tags: ["Java", "JavaFX", "CSS", "OOP", "BUET CSE"],
     year: "2025",
     description:
       "This repository contains the links to the CSE 106 JavaFX Project of L1-T2. It is a Data Structures & Algorithms Visualizer developed using Java and JavaFX.",
@@ -74,7 +74,7 @@ export const projects = [
   {
     title: "Flappy Bird Clone Game",
     imageUrl: flappy_poster,
-    githubUrl: "https://github.com/ShadmanSShuvo/FlappyBird",
+    githubUrl: "https://github.com/ShadmanSShuvo/FlappyBird",a
     youtubeUrl: "https://youtu.be/mjMROK7sZJY",
     tags: ["C", "C++", "OpenGL", "BUET CSE", "Courseworks"],
     year: "2024",
