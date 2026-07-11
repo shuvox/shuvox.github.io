@@ -74,7 +74,7 @@ export const projects = [
   {
     title: "Flappy Bird Clone Game",
     imageUrl: flappy_poster,
-    githubUrl: "https://github.com/ShadmanSShuvo/FlappyBird",a
+    githubUrl: "https://github.com/ShadmanSShuvo/FlappyBird",
     youtubeUrl: "https://youtu.be/mjMROK7sZJY",
     tags: ["C", "C++", "OpenGL", "BUET CSE", "Courseworks"],
     year: "2024",
