@@ -1,11 +1,12 @@
-import type { PageLoad } from "./$types";
+import type { LayoutLoad } from "./$types";
 import persistent_store from "$lib/stores/persistentstore";
 
 export const ssr = false;
 export const prerender = true;
 
 function load_persistent_store() {
-    const value = JSON.parse(localStorage.getItem("persistent_store"));
+    const item = localStorage.getItem("persistent_store");
+    const value = item ? JSON.parse(item) : null;
     if (value == null) {
         persistent_store.set({
             activeUrl: "/",
@@ -17,7 +18,7 @@ function load_persistent_store() {
     }
 }
 
-export const load: PageLoad = async () => {
+export const load: LayoutLoad = async () => {
     load_persistent_store();
     return {
         status: 200,

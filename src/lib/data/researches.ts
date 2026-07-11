@@ -2,7 +2,7 @@ export const researches = [
     {
         title: "N/A",
         arxivUrl: "",
-        keywords: [null],
+        keywords: [],
         coAuthors: ["N/A"],
         abstract:
             "N/A"
@@ -11,7 +11,7 @@ export const researches = [
     {
         title: "N/A",
         arxivUrl: "N/A",
-        keywords: [null],
+        keywords: [],
         coAuthors: ["N/A"],
         abstract:
             "",

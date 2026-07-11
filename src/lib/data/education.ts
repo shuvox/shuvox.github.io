@@ -3,7 +3,7 @@ export const education_milestone = [
     institution: "Bangladesh University of Engineering & Technology (BUET)",
     timeline: "August 2024 - Present",
     degree: "B.Sc. in Computer Science and Engineering",
-    grade: "CGPA: 3.**/4",
+    grade: "CGPA: 3.xx/4",
     description:
       "Currently enrolled in the CSE program at BUET, one of the most prestigious engineering universities in Bangladesh. I am actively involved in various academic and extracurricular activities.",
     courses: [

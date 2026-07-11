@@ -14,28 +14,37 @@
     import logo_dark from "$lib/images/logo-dark.png";
     import logo_light from "$lib/images/logo-light.png";
 
-    function setThemeClass() {
+    function setThemeClass(transition = true) {
+        if (transition) {
+            document.documentElement.classList.add("theme-transitioning");
+        }
+        
         if ($persistent_store.darkMode) {
             document.documentElement.classList.add("dark");
         } else {
             document.documentElement.classList.remove("dark");
         }
+        
+        if (transition) {
+            setTimeout(() => {
+                document.documentElement.classList.remove("theme-transitioning");
+            }, 300);
+        }
     }
 
     onMount(() => {
-        setThemeClass();
+        // Disable transitioning on initial load to avoid flash
+        setThemeClass(false);
         goto($persistent_store.activeUrl);
     });
 
     function toggledarkMode() {
-        console.log(localStorage.getItem("persistent_store"));
         $persistent_store.darkMode = !$persistent_store.darkMode;
         localStorage.setItem(
             "persistent_store",
             JSON.stringify($persistent_store),
         );
-        console.log(localStorage.getItem("persistent_store"));
-        setThemeClass();
+        setThemeClass(true);
     }
 
     const routes = [
@@ -44,7 +53,6 @@
         { url: "/projects", name: "Projects" },
         { url: "/skills", name: "Skills" },
         { url: "/education", name: "Education" },
-        //{ url: "/research", name: "Research" },
     ];
 </script>
 
@@ -63,15 +71,13 @@
             <div class="flex items-center md:order-2">
                 <button
                     on:click={toggledarkMode}
-                    class="p-2 mx-3 bg-gray-200 rounded dark:bg-gray-700"
+                    class="p-2 mx-3 bg-gray-200 rounded dark:bg-gray-700 transition-colors"
+                    aria-label="Toggle Dark Mode"
                 >
-                    <!-- Replace with your toggle mode icon -->
                     <span class="text-gray-800 dark:text-gray-200">
                         {#if $persistent_store.darkMode}
-                            <!-- Icon for Light Mode -->
                             <SunSolid />
                         {:else}
-                            <!-- Icon for Dark Mode -->
                             <MoonSolid />
                         {/if}
                     </span>
@@ -83,7 +89,7 @@
                     <li>
                         {#if $persistent_store.activeUrl === url}
                             <button
-                                class="block py-2 pl-3 pr-4 transition-all rounded text-secondary_light hover:bg-gray-100 hover:text-secondary_light md:p-0 dark:text-secondary_dark dark:hover:text-secondary_dark dark:hover:bg-gray-700 dark:border-gray-700"
+                                class="relative group block py-2 px-1 text-sm font-semibold transition-colors md:p-0 text-secondary_light dark:text-secondary_dark"
                                 on:click|stopPropagation={() => {
                                     $persistent_store.activeUrl = url;
                                     localStorage.setItem(
@@ -91,11 +97,14 @@
                                         JSON.stringify($persistent_store),
                                     );
                                     goto(url);
-                                }}>{name}</button
+                                }}
                             >
+                                {name}
+                                <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-secondary_light dark:bg-secondary_dark transition-transform duration-300 scale-x-100 origin-left"></span>
+                            </button>
                         {:else}
                             <button
-                                class="block py-2 pl-3 pr-4 transition-all rounded text-ink_light hover:bg-gray-100 hover:text-secondary_light md:p-0 dark:text-ink_dark dark:hover:text-secondary_dark dark:hover:bg-gray-700 dark:border-gray-700"
+                                class="relative group block py-2 px-1 text-sm font-medium transition-colors md:p-0 text-ink_light/70 hover:text-secondary_light dark:text-ink_dark/70 dark:hover:text-secondary_dark"
                                 on:click|stopPropagation={() => {
                                     $persistent_store.activeUrl = url;
                                     localStorage.setItem(
@@ -103,8 +112,11 @@
                                         JSON.stringify($persistent_store),
                                     );
                                     goto(url);
-                                }}>{name}</button
+                                }}
                             >
+                                {name}
+                                <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-secondary_light dark:bg-secondary_dark transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-left"></span>
+                            </button>
                         {/if}
                     </li>
                 {/each}
