@@ -33,6 +33,8 @@
         <img
             src={project.imageUrl}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             class="object-cover h-full w-full transition-transform duration-500 group-hover:scale-105"
         />
     </div>
@@ -43,13 +45,14 @@
             {project.title}
         </h3>
         <div class="flex gap-3 text-ink_light/80 dark:text-ink_dark/80">
-            <a href={project.githubUrl} target="_blank" aria-label="GitHub" class="hover:text-secondary_light dark:hover:text-secondary_dark transition-colors">
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-secondary_light dark:hover:text-secondary_dark transition-colors">
                 <GithubSolid size="lg" />
             </a>
             {#if project.youtubeUrl}
                 <a
                     href={project.youtubeUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="YouTube"
                     class="hover:text-secondary_light dark:hover:text-secondary_dark transition-colors"
                 >
@@ -60,6 +63,7 @@
                 <a
                     href={project.fileUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="PDF File"
                     class="hover:text-secondary_light dark:hover:text-secondary_dark transition-colors"
                 >

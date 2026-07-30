@@ -6,6 +6,34 @@
 	<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	<!-- Google Fonts: preconnect for speed, then non-blocking load -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+		media="print"
+		onload="this.media='all'"
+	/>
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+	</noscript>
+
+	<!-- Inline script: apply dark/light mode before first paint to avoid FOUC -->
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('persistent_store');
+				var darkMode = stored ? JSON.parse(stored).darkMode : true;
+				if (darkMode !== false) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {
+				document.documentElement.classList.add('dark');
+			}
+		})();
+	</script>
+
 	<!-- Primary Meta Tags -->
 	<title>Shadman Shuvo — BUET CSE Undergrad & Full-Stack Developer</title>
 	<meta name="title" content="Shadman Shuvo — BUET CSE Undergrad & Full-Stack Developer" />

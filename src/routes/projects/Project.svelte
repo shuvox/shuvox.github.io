@@ -20,7 +20,12 @@
     <p>{project.description}</p>
     <div class="flex flex-row justify-start gap-4 my-4">
         {#each Object.keys(project.links) as link}
-            <a href={project.links[link]} class="underline">{link}</a>
+            <a
+                href={project.links[link]}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-secondary_light dark:hover:text-secondary_dark transition-colors"
+            >{link}</a>
         {/each}
     </div>
 </div>
